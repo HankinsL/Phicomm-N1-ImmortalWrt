@@ -12,7 +12,7 @@ BOARD=n1
 
 # 让N1一直有wifi可用，以减少抱怨
 # 5.10(及以上)内核是否启用wifi  1:启用 0:禁用
-ENABLE_WIFI_K510=1
+ENABLE_WIFI_K510=0
 
 SUBVER=$1
 
@@ -42,14 +42,12 @@ TGT_IMG="${WORK_DIR}/openwrt_${SOC}_${BOARD}_${OPENWRT_VER}_k${KERNEL_VERSION}${
 ###########################################################################
 KMOD="${PWD}/files/kmod"
 KMOD_BLACKLIST="${PWD}/files/kmod_blacklist"
-MAC_SCRIPT1="${PWD}/files/fix_wifi_macaddr.sh"
 MAC_SCRIPT2="${PWD}/files/find_macaddr.pl"
 MAC_SCRIPT3="${PWD}/files/inc_macaddr.pl"
 CPUSTAT_SCRIPT="${PWD}/files/cpustat"
 CPUSTAT_SCRIPT_PY="${PWD}/files/cpustat.py"
 INDEX_PATCH_HOME="${PWD}/files/index.html.patches"
 GETCPU_SCRIPT="${PWD}/files/getcpu"
-TTYD="${PWD}/files/ttyd"
 FLIPPY="${PWD}/files/scripts_deprecated/flippy_cn"
 BANNER="${PWD}/files/banner"
 
@@ -57,9 +55,6 @@ BANNER="${PWD}/files/banner"
 FMW_HOME="${PWD}/files/firmware"
 SMB4_PATCH="${PWD}/files/smb4.11_enable_smb1.patch"
 SYSCTL_CUSTOM_CONF="${PWD}/files/99-custom.conf"
-
-# 20200709 add
-COREMARK="${PWD}/files/coremark.sh"
 
 # 20200930 add
 SND_MOD="${PWD}/files/s905d/snd-meson-gx"
@@ -85,9 +80,6 @@ FIP_HOME="${PWD}/files/meson_btld/with_fip/s905d"
 UBOOT_WITH_FIP="${FIP_HOME}/n1-u-boot.bin.sd.bin"
 UBOOT_WITHOUT_FIP_HOME="${PWD}/files/meson_btld/without_fip"
 UBOOT_WITHOUT_FIP="u-boot-n1.bin"
-
-# 20210208 add
-WIRELESS_CONFIG="${PWD}/files/s905d/wireless"
 
 # 20210307 add
 SS_LIB="${PWD}/files/ss-glibc/lib-glibc.tar.xz"
